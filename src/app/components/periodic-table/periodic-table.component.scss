@@ -1,0 +1,39 @@
+table {
+    width: 100%;
+}
+
+.filter-container {
+    margin-bottom: 16px;
+}
+
+mat-form-field {
+    margin: 15px !important;
+}
+
+:host::ng-deep {
+    .mat-mdc-header-row {
+        background-color: var(--secondary-color);
+        color: white;
+        font-weight: bold;
+    }
+
+    .mat-mdc-header-cell {
+        text-align: left;
+        padding: 12px;
+    }
+
+    .mat-mdc-row {
+        transition: background-color 0.3s;
+        background-color: var(--base-color);
+
+    }
+
+    .mat-mdc-cell {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .mdc-text-field {
+        background-color: var(--base-color);
+    }
+}

@@ -1,0 +1,38 @@
+<div style="text-align: center">
+    <div class="filter-container">
+        <mat-form-field appearance="outline">
+            <mat-label>Filter elements</mat-label>
+            <input matInput (input)="actions.search($event)" placeholder="Type to filter..." />
+        </mat-form-field>
+    </div>
+
+    <table mat-table [dataSource]="filteredData" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element" (click)="openEditDialog(element, element.name, 'name')">
+                {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef> Weight </th>
+            <td mat-cell *matCellDef="let element" (click)="openEditDialog(element, element.weight, 'weight')">
+                {{element.weight}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef> Symbol </th>
+            <td mat-cell *matCellDef="let element" (click)="openEditDialog(element, element.symbol, 'symbol')">
+                {{element.symbol}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</div>
